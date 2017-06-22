@@ -167,7 +167,6 @@ const setCwd = (pid) => {
 const setBranch = (actionCwd) => {
     exec(`git config --get user.email`, {cwd: actionCwd}, (error, email) => {
         gitUser = email.trim();
-        console.log(gitUser);
     })
     exec(`git symbolic-ref --short HEAD || git rev-parse --short HEAD`, { cwd: actionCwd }, (err, branch) => {
         curBranch = branch;
